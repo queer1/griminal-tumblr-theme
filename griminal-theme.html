@@ -169,7 +169,7 @@ code {
                 <li><a href="{BlogURL}">Home</a></li>
                 {block:AskEnabled}<li><a href="/ask">{AskLabel}</a></li>{/block:AskEnabled}
                 {block:submissionEnabled}<li><a href="/submit">{SubmitLabel}</a></li>{/block:submissionEnabled}
-                {block:HasPages}<li><a href="{URL}">{Label}</a></li>{block:HasPages}
+                {block:HasPages}{block:Pages}<li><a href="{URL}">{Label}</a></li>{/block:Pages}{/block:HasPages}
                 <li><a href="/random">Random</a></li>
                 <li><a href="/mobile">Mobile</a></li>
                 <li><a href="/archive">Archive</a></li>
@@ -254,6 +254,7 @@ code {
                         {/block:Caption}
                     </div>
                 {/block:Audio}
+                {block:IndexPage}
         <!-- Google+ Authorship... or not -->
         <div id="Author">
             {block:IfNotGoogleAuthorship}
@@ -299,7 +300,7 @@ code {
     {/block:Permalink}
     {/block:IfDisqusShortname}
             <!-- End of Disqus thread -->
-            
+            {/block:IndexPage}
          </article>
         {/block:Posts}
         {block:Pagination}
